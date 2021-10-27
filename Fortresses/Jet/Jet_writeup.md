@@ -1,50 +1,54 @@
-<h1> Решение Jet с HackThe Box </h1>
+<h1> Решение Jet с HackTheBox </h1>
+<ol>
+<li> Запускаем vpn и проверяем выданный ip адрес </li>
 
-1. Запускаем vpn и проверяем выданный ip адрес
+ sudo openvpn  *.ovpn
 
-sudo openvpn  *.ovpn
+ ping 10.13.37.10 
 
-ping 10.13.37.10
 
-2. Запускаем nmap для сканирования открытых портов
+
+<li> Запускаем nmap для сканирования открытых портов </li>
 
 nmap -sC -sV -Pn -p- -oN nmap.txt 10.13.37.10
 
 команды nmap
-
+```
 -sC -
 -sV -
 -Pn -
 -p- -
 -oN -
-
+```
 вывод nmap
 
 
-2. видим 80 порт переходим 
+<li> видим 80 порт переходим </li>
 
 Изучаем web страничку и получаем первый флаг от Connect
 
 
-4.  Узнаем информацию о доменном имени через dig 
+<li> Узнаем информацию о доменном имени через dig </li>
 
 dig @10.13.37.10 -x 10.13.37.10
 
-
+```
 ;; AUTHORITY SECTION:
 37.13.10.in-addr.arpa.  604800  IN      SOA     www.securewebinc.jet. securewebinc.jet. 3 604800 86400 2419200 604800
-
+```
 
 получаем www.securewebinc.jet добавим в /etc/hosts
 
 sudo nano /etc/hosts
+```
 ## Jet
 
 10.13.37.10   www.securewebinc.jet 
+```
 
-5. Переходим на сайт и получаем флаг от Digging in...
+<li>Переходим на сайт и получаем флаг от Digging in... </li>
 
-6. Изучаем исходный код и находим обфусцированный код
+<li> Изучаем исходный код и находим обфусцированный код </li>
 
 http://www.securewebinc.jet/js/secure.js
 
@@ -56,7 +60,7 @@ https://lelinhtinh.github.io/de4js/
 
 изучаем код и получаем флаг от Going Deeper
 
+<li> </li>
 
-
-
+</ol>
 
