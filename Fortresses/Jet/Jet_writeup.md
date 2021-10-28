@@ -6,17 +6,20 @@
 
  ping 10.13.37.10 
 
-
+[![ping 10.13.37.10](/Fortresses/Jet/.image/1_ping.png "ping 10.13.37.10")](https://github.com/kiberjen/HackTheBox-Machines-writeup/blob/main/Fortresses/Jet/.image/1_ping.png)
 
 <li> Запускаем nmap для сканирования открытых портов </li>
 
-nmap -sC -sV -Pn -p- -oN nmap.txt 10.13.37.10
+nmap -F 10.13.37.10
+
+
+nmap -sS -A -p- -oN nmap.txt 10.13.37.10
 
 команды nmap
 ```
--sC -
--sV -
--Pn -
+-F -
+-sS -
+-A -
 -p- -
 -oN -
 ```
